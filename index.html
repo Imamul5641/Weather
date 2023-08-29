@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <title>Your Weather App</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    @media screen and (orientation: portrait) {
+        body {
+            display: none;
+        }
+
+        #orientation-warning {
+            display: block;
+        }
+    }
+</style>
+
+<script>
+    window.addEventListener('load', function () {
+        const utterance = new SpeechSynthesisUtterance(`Search weather condition of places by name`);
+        speechSynthesis.speak(utterance);
+    });
+</script>
+
+<body>
+    <section id="section1">
+        <div class="container">
+            <div class="header">
+                <h1 style="text-align: center;">Weather Conditon of Different Places </h1>
+                <br><br>
+                <div class="search-box">
+                    <input type="text" placeholder="Enter your location" id="place-input">
+
+                    <button class="fa-solid fa-magnifying-glass" id="searchBtn"></button>
+                    <button id="voiceCommandBtn" class="fa-solid fa-microphone"></button>
+                </div>
+            </div>
+
+            <div class="location-not-found">
+                <h1>Sorry, Location not found!!!</h1>
+                <img src="assets/404.png" alt="404 Error">
+            </div>
+
+            <div class="weather-body">
+                <img id="weatherIcon" src="assets/13d.png" alt="Weather Image">
+                <div class="weather-box">
+                    <p class="temperature">0 <sup>°C</sup></p>
+                    <p class="description">light rain</p>
+                </div>
+
+                <div class="weather-details">
+                    <div class="humidity">
+                        <i class="fa-sharp fa-solid fa-droplet"></i>
+                        <div class="text">
+                            <span id="humidity">45%</span>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+
+                    <div class="wind">
+                        <i class="fa-solid fa-wind"></i>
+                        <div class="text">
+                            <span id="wind-speed">12</span>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div><img id="monument-image" src="" alt="Monument Image"></div>
+
+    </section>
+    <!-- <script src="secrets.js"></script> -->
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/595a890311.js" crossorigin="anonymous"></script>
+    <!-- <script src="script1.js"></script> -->
+
+</body>
+
+</html>
